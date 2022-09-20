@@ -11,29 +11,37 @@ public class BaseClass {
 
 	static WebDriver driver;
 
-	/*
-	public static WebDriver setup() {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\bglag\\Desktop\\selenium hood\\chromedriver.exe");
-		WebDriver driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-		driver.manage().window().maximize();
-		driver.get("https://better-life.tk/login");
+	
+	public static  WebDriver Browser(String BrowserType) {
+		if(BrowserType.equalsIgnoreCase("Chrome")) {
+			System.setProperty("webdriver.chrome.driver",   
+					"C:\\Users\\bglag\\Desktop\\selenium hood\\chromedriver.exe");
+			WebDriver driver = new ChromeDriver();
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+			driver.manage().window().maximize();
+			driver.get("https://better-life.tk/login");
+			return driver;
+		}
+		else if(BrowserType.equalsIgnoreCase("Edge")) {
+			System.setProperty("webdriver.edge.driver", 
+					"C:\\Users\\bglag\\Desktop\\selenium hood\\msedgedriver.exe");
+			WebDriver driver = new EdgeDriver();
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+			driver.manage().window().maximize();
+			driver.get("https://better-life.tk/login");
+			return driver;
+		}
 		return driver;
-	}
-	*/
-
-	public static WebDriver SetUp() {
-		System.setProperty("webdriver.edge.driver", "C:\\Users\\bglag\\Desktop\\selenium hood\\msedgedriver.exe");
-		WebDriver driver = new EdgeDriver();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-		driver.manage().window().maximize();
-		driver.get("https://better-life.tk/login");
-		return driver;
+		
 	}
 	
-	public static void TearDown(WebDriver driver) {
-		driver.quit();
+	
+	
+	public static WebDriver SetUp() {
+		return Browser("chrome");
 	}
+	
+	
 	
 	public static void Admin_Username_password(WebDriver driver) {
 		driver.findElement(By.xpath("//input[@id='username']")).sendKeys("admin");
@@ -63,6 +71,8 @@ public class BaseClass {
 	}
 	
 	
-	
+	public static void TearDown(WebDriver driver) {
+		driver.quit();
+	}
 
 }

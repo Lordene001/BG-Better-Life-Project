@@ -5,7 +5,6 @@
     <classes>
       <class name="BetterLifeTest.LogingPageTest">
         <methods>
-          <include name="Veryfy_TGE_Supervisor_Login_Logout"/>
           <include name="Veryfy_Direct_Supervisor_Login_Logout"/>
           <include name="Veryfy_Admin_Login_LogOut"/>
         </methods>

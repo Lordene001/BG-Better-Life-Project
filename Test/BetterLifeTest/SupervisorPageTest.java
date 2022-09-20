@@ -14,11 +14,11 @@ public class SupervisorPageTest {
 	public void Verify_Add_FO_To_Quadrant() throws InterruptedException {
 		WebDriver driver = BaseClass.SetUp();
 		BaseClass.TGE_Username_password(driver);
-		
+		Thread.sleep(5000);
 		SupervisorPage SP = new SupervisorPage(driver);
 		SP.AssignToQuadrant_1("Quadrant 002");
 		boolean Msg = SP.AssignToQuadrant_2("T-1000000000000494");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		Assert.assertTrue(Msg);
 		
 		BaseClass.TearDown(driver);
@@ -26,12 +26,12 @@ public class SupervisorPageTest {
 	}
 	
 	
-/*
+
 	@Test
 	public void Verify_Remove_FO_From_Quadrant() throws InterruptedException {
 		WebDriver driver = BaseClass.SetUp();
 		BaseClass.TGE_Username_password(driver);
-		
+		Thread.sleep(5000);
 		SupervisorPage SP = new SupervisorPage(driver);
 		SP.Remove_FO_From_Quadrant_1("Quadrant 002");
 		SP.Remove_FO_From_Quadrant_2("0494");
@@ -43,5 +43,5 @@ public class SupervisorPageTest {
 		BaseClass.TearDown(driver);
 		
 	}
-*/
+
 }

@@ -51,9 +51,10 @@ public class SupervisorPage {
 	}
 	
 	
-	public void AssignToQuadrant_1(String QuadrantID) {
+	public void AssignToQuadrant_1(String QuadrantID) throws InterruptedException {
 		AssignToQuadrant.click();
 		SearchBox.sendKeys(QuadrantID);
+		Thread.sleep(5000);
 	}
 	
 	public boolean AssignToQuadrant_2(String StaffId) throws InterruptedException {
@@ -74,6 +75,7 @@ public class SupervisorPage {
 		Thread.sleep(5000);
 		AssignToQuadrant.click();
 		SearchBox.sendKeys(QuadrantID);
+		Thread.sleep(5000);
 		ManageQuadrant.click();
 		Thread.sleep(3000);
 		View_FO_Assignment.click();
