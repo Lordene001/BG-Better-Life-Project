@@ -3,12 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="BetterLifeTest.LogingPageTest">
+      <class name="BetterLifeTest.AdminPageTest">
         <methods>
-          <include name="Veryfy_Direct_Supervisor_Login_Logout"/>
-          <include name="Veryfy_Admin_Login_LogOut"/>
+          <include name="Verify_Re_Assign_FO"/>
         </methods>
-      </class> <!-- BetterLifeTest.LogingPageTest -->
+      </class> <!-- BetterLifeTest.AdminPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

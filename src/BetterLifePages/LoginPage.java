@@ -41,19 +41,17 @@ public class LoginPage {
 	
 	
 	public void AdminHomeButton() throws InterruptedException  {
+		Thread.sleep(1000);
 		ApprovePortfolios.click();
-		Thread.sleep(500);
-		HomeBtn.click();
-	}
-	
-	public void SupervisorHomeButton() throws InterruptedException  {
-		AssignToQuadrant.click();
 		Thread.sleep(3000);
+		//WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		//wait.until(ExpectedConditions.elementToBeClickable(HomeBtn));
 		HomeBtn.click();
 	}
 	
 	
 	public void Logout() throws InterruptedException {
+		Thread.sleep(2000);
 		profile.click();
 		logout.click();
 		

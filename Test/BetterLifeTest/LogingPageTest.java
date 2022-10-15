@@ -19,13 +19,12 @@ public class LogingPageTest {
 		
 		LP.AdminHomeButton();
 		String ActualURL = driver.getCurrentUrl();
-		String ExpectedURL = "https://better-life.tk/admin/dashboard";
+		String ExpectedURL = "https://portfolio-assignment.babbangonaapps.com/admin/dashboard";
 		Assert.assertEquals(ActualURL, ExpectedURL);
 		
-		Thread.sleep(5000);
 		LP.Logout();
 		String ActualURL1 = driver.getCurrentUrl();
-		String ExpectedURL1 = "https://better-life.tk/login";
+		String ExpectedURL1 = "https://portfolio-assignment.babbangonaapps.com/login";
 		Assert.assertEquals(ActualURL1, ExpectedURL1);
 		BaseClass.TearDown(driver);
 		
@@ -38,15 +37,16 @@ public class LogingPageTest {
 		LoginPage LP = new LoginPage(driver);
 		BaseClass.TGE_Username_password(driver);
 		
-		LP.SupervisorHomeButton();
+		Thread.sleep(3000);
+		driver.navigate().refresh();
+		
 		String ActualURL = driver.getCurrentUrl();
-		String ExpectedURL = "https://better-life.tk/supervisor/dashboard";
+		String ExpectedURL = "https://portfolio-assignment.babbangonaapps.com/supervisor/dashboard";
 		Assert.assertEquals(ActualURL, ExpectedURL);
 		
-		Thread.sleep(5000);
 		LP.Logout();
 		String ActualURL1 = driver.getCurrentUrl();
-		String ExpectedURL1 = "https://better-life.tk/login";
+		String ExpectedURL1 = "https://portfolio-assignment.babbangonaapps.com/login";
 		Assert.assertEquals(ActualURL1, ExpectedURL1);
 		BaseClass.TearDown(driver);
 	}
@@ -58,18 +58,20 @@ public class LogingPageTest {
 		LoginPage LP = new LoginPage(driver);
 		BaseClass.Direct_Username_password(driver);
 		
-		LP.SupervisorHomeButton();
+		Thread.sleep(3000);
+		driver.navigate().refresh();
+		
 		String ActualURL = driver.getCurrentUrl();
-		String ExpectedURL = "https://better-life.tk/supervisor/dashboard";
+		String ExpectedURL = "https://portfolio-assignment.babbangonaapps.com/supervisor/dashboard";
 		Assert.assertEquals(ActualURL, ExpectedURL);
 		
-		Thread.sleep(5000);
 		LP.Logout();
 		String ActualURL1 = driver.getCurrentUrl();
-		String ExpectedURL1 = "https://better-life.tk/login";
+		String ExpectedURL1 = "https://portfolio-assignment.babbangonaapps.com/login";
 		Assert.assertEquals(ActualURL1, ExpectedURL1);
 		BaseClass.TearDown(driver);
 	}
+	
 	
 	@Test
 	public void Veryfy_In_Season_Advisor_Login_Logout() throws InterruptedException {
@@ -77,15 +79,16 @@ public class LogingPageTest {
 		LoginPage LP = new LoginPage(driver);
 		BaseClass.Advisor_Username_password(driver);
 		
-		LP.SupervisorHomeButton();
+		Thread.sleep(3000);
+		driver.navigate().refresh();
+		
 		String ActualURL = driver.getCurrentUrl();
-		String ExpectedURL = "https://better-life.tk/supervisor/dashboard";
+		String ExpectedURL = "https://portfolio-assignment.babbangonaapps.com/supervisor/dashboard";
 		Assert.assertEquals(ActualURL, ExpectedURL);
 		
-		Thread.sleep(5000);
 		LP.Logout();
 		String ActualURL1 = driver.getCurrentUrl();
-		String ExpectedURL1 = "https://better-life.tk/login";
+		String ExpectedURL1 = "https://portfolio-assignment.babbangonaapps.com/login";
 		Assert.assertEquals(ActualURL1, ExpectedURL1);
 		BaseClass.TearDown(driver);
 	}

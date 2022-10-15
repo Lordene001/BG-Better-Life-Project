@@ -19,7 +19,7 @@ public class BaseClass {
 			WebDriver driver = new ChromeDriver();
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 			driver.manage().window().maximize();
-			driver.get("https://better-life.tk/login");
+			driver.get("https://portfolio-assignment.babbangonaapps.com/login");
 			return driver;
 		}
 		else if(BrowserType.equalsIgnoreCase("Edge")) {
@@ -28,7 +28,7 @@ public class BaseClass {
 			WebDriver driver = new EdgeDriver();
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 			driver.manage().window().maximize();
-			driver.get("https://better-life.tk/login");
+			driver.get("https://portfolio-assignment.babbangonaapps.com/login");
 			return driver;
 		}
 		return driver;
@@ -38,7 +38,7 @@ public class BaseClass {
 	
 	
 	public static WebDriver SetUp() {
-		return Browser("chrome");
+		return Browser("Chrome");
 	}
 	
 	
