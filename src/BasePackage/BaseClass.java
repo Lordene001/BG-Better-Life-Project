@@ -38,35 +38,35 @@ public class BaseClass {
 	
 	
 	public static WebDriver SetUp() {
-		return Browser("Chrome");
+		return Browser("Edge");
 	}
 	
 	
 	
 	public static void Admin_Username_password(WebDriver driver) {
-		driver.findElement(By.xpath("//input[@id='username']")).sendKeys("admin");
-		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("admin");
+		driver.findElement(By.xpath("//input[@id='username']")).sendKeys("Admin_032");
+		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("3456");
 		driver.findElement(By.xpath("//button[text()='Sign In']")).click();
 	}
 	
 	
 	public static void TGE_Username_password(WebDriver driver) {
-		driver.findElement(By.xpath("//input[@id='username']")).sendKeys("tge");
-		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("tge");
+		driver.findElement(By.xpath("//input[@id='username']")).sendKeys("Lagos.TGE.Hub_Supervisor");
+		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("4893");
 		driver.findElement(By.xpath("//button[text()='Sign In']")).click();
 	}
 	
 	
 	public static void Direct_Username_password(WebDriver driver) {
-		driver.findElement(By.xpath("//input[@id='username']")).sendKeys("direct");
-		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("direct");
+		driver.findElement(By.xpath("//input[@id='username']")).sendKeys("Lagos.BGD.Hub_Supervisor");
+		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("1843");
 		driver.findElement(By.xpath("//button[text()='Sign In']")).click();
 	}
 	
 	
 	public static void Advisor_Username_password(WebDriver driver) {
-		driver.findElement(By.xpath("//input[@id='username']")).sendKeys("in-season");
-		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("in_season");
+		driver.findElement(By.xpath("//input[@id='username']")).sendKeys("Lagos.PC.Supervisor");
+		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("1843");
 		driver.findElement(By.xpath("//button[text()='Sign In']")).click();
 	}
 	

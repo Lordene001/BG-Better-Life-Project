@@ -98,35 +98,31 @@ public class SupervisorPage {
 	
 	
 	public void AssignToQuadrant_1(String QuadrantID) throws InterruptedException {
-		Thread.sleep(5000);
 		AssignToQuadrant.click();
-		Thread.sleep(5000);
 		SearchBox.sendKeys(QuadrantID);
-		Thread.sleep(8000);
+		Thread.sleep(1000);
 	}
 	
 	public boolean AssignToQuadrant_2(String StaffId) throws InterruptedException {
 		ManageQuadrant.click();
-		Thread.sleep(7000);
+		Thread.sleep(1000);
 		AddNewFO.click();
 		SearchBox.sendKeys(StaffId);
 		Thread.sleep(1000);
 		Add_FO_Btn.click();
 		Thread.sleep(500);
 		Yes_Btn.click();
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		return Added_FO_Success_Msg.isDisplayed();
 	}
 	
 	
 	public void Remove_FO_From_Quadrant_1(String QuadrantID) throws InterruptedException {
-		Thread.sleep(5000);
 		AssignToQuadrant.click();
-		Thread.sleep(5000);
 		SearchBox.sendKeys(QuadrantID);
-		Thread.sleep(8000);
+		Thread.sleep(1000);
 		ManageQuadrant.click();
-		Thread.sleep(7000);
+		Thread.sleep(1000);
 		View_FO_Assignment.click();
 	}
 	
@@ -146,7 +142,7 @@ public class SupervisorPage {
 	
 	public boolean ViewFieldOfficerAllocation() throws InterruptedException {
 		AssignToQuadrant.click();
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 		ViewAllFieldOfficers.click();
 		ViewAllocationBtn.click();
 		return ViewAllocationPageMsg.isDisplayed();
@@ -154,14 +150,10 @@ public class SupervisorPage {
 	}
 	
 	
-	public void AddFieldOfficerToVillage1(String QuadrantID) throws InterruptedException {
-		Thread.sleep(5000);
+	public void AddFieldOfficerToVillage1(String QuadrantID) {
 		AssignFieldOfficerToVillage.click();
-		Thread.sleep(8000);
 		SearchBox.sendKeys(QuadrantID);
-		Thread.sleep(2000);
 		GoToQuadrant.click();
-		Thread.sleep(5000);
 		
 		
 	}
@@ -176,13 +168,11 @@ public class SupervisorPage {
 	}
 	
 	public boolean AddLeadCoachButton(String QuadrantID) throws InterruptedException {
-		Thread.sleep(5000);
 		AssignFieldOfficerToVillage.click();
-		Thread.sleep(8000);
 		SearchBox.sendKeys(QuadrantID);
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		GoToQuadrant.click();
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 		AddLeadCoach.click();
 		return Add_FO_Btn.isDisplayed();
 		
@@ -199,7 +189,7 @@ public class SupervisorPage {
 	
 	public String SendForApproval() throws InterruptedException {
 		SendForApproval.click();
-		Thread.sleep(5000);
+		Thread.sleep(1000);
 		return SendForApprovalMessage.getText();
 	}
 	

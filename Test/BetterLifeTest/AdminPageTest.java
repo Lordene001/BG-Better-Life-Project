@@ -17,13 +17,14 @@ import BetterLifePages.AdminPage;
 public class AdminPageTest {
 
 	
-	@Test(priority=0)
+	//@Test(priority=0)
 	public void Verify_Configure_Hub_Button() throws InterruptedException {
 		WebDriver driver = BaseClass.SetUp();
 		BaseClass.Admin_Username_password(driver);
 
 		AdminPage AP = new AdminPage(driver);
 		AP.ConfigureHub();
+		
 		
 		String ActualURL = driver.getCurrentUrl();
 		String ExpectedURL = "https://portfolio-assignment.babbangonaapps.com/admin/create-hub";
@@ -50,7 +51,7 @@ public class AdminPageTest {
 		}
 		
 	
-		
+	
 		@Test(priority=2)
 		public void Verify_Reject_All_Button() {
 			WebDriver driver = BaseClass.SetUp();
@@ -67,7 +68,7 @@ public class AdminPageTest {
 	}
 	
 		
-	
+		
 	@Test(priority=3)
 	public void Verify_Approve_And_Reject_A_Single_FO() throws InterruptedException {
 		WebDriver driver = BaseClass.SetUp();

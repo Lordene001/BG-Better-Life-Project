@@ -15,7 +15,7 @@ public class AdminPage {
 	@FindBy(xpath="//button[normalize-space()='Approve Portfolios']")
 	WebElement ApprovePortfolios;
 	
-	@FindBy(xpath="(//div/div[text()='Hadejia'])")
+	@FindBy(xpath="//div[@class='cursor-pointer h-20 text-4xl flex items-center justify-center col-span-1 text-white bg-[#eec978]']")
 	WebElement Hub;
 	
 	@FindBy(xpath="(//input[@type='checkbox'])[1]")
@@ -94,7 +94,7 @@ public class AdminPage {
 		ConfigHub.click();
 	}
 	
-	public String ApproveAllButton() {
+	public String ApproveAllButton()  {
 		ApprovePortfolios.click();
 		Hub.click();
 		SelectAllFO.click();

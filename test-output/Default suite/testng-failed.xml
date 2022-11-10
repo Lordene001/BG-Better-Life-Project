@@ -8,6 +8,11 @@
           <include name="Verify_Re_Assign_FO"/>
         </methods>
       </class> <!-- BetterLifeTest.AdminPageTest -->
+      <class name="BetterLifeTest.SupervisorPageTest">
+        <methods>
+          <include name="Add_Field_Officer_To_Village"/>
+        </methods>
+      </class> <!-- BetterLifeTest.SupervisorPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

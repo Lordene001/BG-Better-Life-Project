@@ -44,7 +44,6 @@ public class SupervisorPageTest {
 	public void Verify_View_A_Field_Officer_Allocation() throws InterruptedException {
 		WebDriver driver = BaseClass.SetUp();
 		BaseClass.TGE_Username_password(driver);
-		Thread.sleep(5000);
 		SupervisorPage SP = new SupervisorPage(driver);
 		
 		Boolean Msg = SP.ViewFieldOfficerAllocation();
@@ -58,7 +57,6 @@ public class SupervisorPageTest {
 	public void Verify_Remove_FO_From_Quadrant() throws InterruptedException {
 		WebDriver driver = BaseClass.SetUp();
 		BaseClass.TGE_Username_password(driver);
-		Thread.sleep(5000);
 		SupervisorPage SP = new SupervisorPage(driver);
 		SP.Remove_FO_From_Quadrant_1("Quadrant 002");
 		SP.Remove_FO_From_Quadrant_2("0494");
@@ -76,10 +74,9 @@ public class SupervisorPageTest {
 	public void Add_Lead_Coach_Button_In_Go_To_Quadrant() throws InterruptedException {
 		WebDriver driver = BaseClass.SetUp();
 		BaseClass.TGE_Username_password(driver);
-		Thread.sleep(5000);
 		
 		SupervisorPage SP = new SupervisorPage(driver);
-		Boolean Check = SP.AddLeadCoachButton("007");
+		Boolean Check = SP.AddLeadCoachButton("008");
 		Assert.assertTrue(Check);
 		
 		BaseClass.TearDown(driver);
@@ -91,7 +88,7 @@ public class SupervisorPageTest {
 	public void Add_Field_Officer_To_Village() throws InterruptedException {
 		WebDriver driver = BaseClass.SetUp();
 		BaseClass.TGE_Username_password(driver);
-		Thread.sleep(5000);
+	
 		
 		SupervisorPage SP = new SupervisorPage(driver);
 		SP.AddFieldOfficerToVillage1("008");
@@ -114,7 +111,6 @@ public class SupervisorPageTest {
 	public void Verify_Manage_Field_Officer_Portfolio_Size_Button() throws InterruptedException {
 		WebDriver driver = BaseClass.SetUp();
 		BaseClass.TGE_Username_password(driver);
-		Thread.sleep(5000);
 		
 		SupervisorPage SP = new SupervisorPage(driver);
 		SP.ManageFieldOfficerPortfolioSize();
@@ -130,7 +126,6 @@ public class SupervisorPageTest {
 	public void Verify_Manage_Field_Officer_Distance_Travelled_Button() throws InterruptedException {
 		WebDriver driver = BaseClass.SetUp();
 		BaseClass.TGE_Username_password(driver);
-		Thread.sleep(5000);
 		
 		SupervisorPage SP = new SupervisorPage(driver);
 		SP.ManageFieldOfficerDistanceTravelled();
@@ -146,7 +141,6 @@ public class SupervisorPageTest {
 	public void Verify_Send_For_Approval_Button() throws InterruptedException {
 		WebDriver driver = BaseClass.SetUp();
 		BaseClass.TGE_Username_password(driver);
-		Thread.sleep(5000);
 		
 		SupervisorPage SP = new SupervisorPage(driver);
 		String ActualMessage = SP.SendForApproval();
