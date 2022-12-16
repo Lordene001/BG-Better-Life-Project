@@ -5,14 +5,13 @@
     <classes>
       <class name="BetterLifeTest.AdminPageTest">
         <methods>
+          <include name="Verify_Reject_All_Button"/>
           <include name="Verify_Re_Assign_FO"/>
+          <include name="Verify_Admin_Can_Switch_Hub"/>
+          <include name="Verify_Approve_All_Button"/>
+          <include name="Verify_Approve_And_Reject_A_Single_FO"/>
         </methods>
       </class> <!-- BetterLifeTest.AdminPageTest -->
-      <class name="BetterLifeTest.SupervisorPageTest">
-        <methods>
-          <include name="Add_Field_Officer_To_Village"/>
-        </methods>
-      </class> <!-- BetterLifeTest.SupervisorPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

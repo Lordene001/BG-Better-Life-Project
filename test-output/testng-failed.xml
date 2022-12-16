@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" parallel="tests" name="Test(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
       <class name="BetterLifeTest.AdminPageTest">
         <methods>
+          <include name="Verify_Reject_All_Button"/>
           <include name="Verify_Re_Assign_FO"/>
+          <include name="Verify_Admin_Can_Switch_Hub"/>
+          <include name="Verify_Approve_All_Button"/>
+          <include name="Verify_Approve_And_Reject_A_Single_FO"/>
         </methods>
       </class> <!-- BetterLifeTest.AdminPageTest -->
-      <class name="BetterLifeTest.SupervisorPageTest">
-        <methods>
-          <include name="Add_Lead_Coach_Button_In_Go_To_Quadrant"/>
-          <include name="Verify_Remove_FO_From_Quadrant"/>
-          <include name="Verify_Add_FO_To_Quadrant"/>
-          <include name="Add_Field_Officer_To_Village"/>
-        </methods>
-      </class> <!-- BetterLifeTest.SupervisorPageTest -->
     </classes>
-  </test> <!-- Test(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

@@ -9,8 +9,14 @@ public class AdminPage {
 
 	WebDriver driver;
 	
-	@FindBy(xpath="//button[normalize-space()='Configure Hubs']")
-	WebElement ConfigHub;
+	@FindBy(xpath="//button[normalize-space()='Change Hub']")
+	WebElement ChangeHub;
+	
+	@FindBy(xpath="//div[@class=' css-ackcql']/child::input")
+	WebElement EnterHubName;
+	
+	@FindBy(xpath="//button[normalize-space()='Submit']")
+	WebElement SubmitSelectedHub;
 	
 	@FindBy(xpath="//button[normalize-space()='Approve Portfolios']")
 	WebElement ApprovePortfolios;
@@ -89,9 +95,19 @@ public class AdminPage {
 	}
 	
 	
-	public void ConfigureHub() throws InterruptedException {
+	public void ChangeHub_1(String HubName) throws InterruptedException {
+		ChangeHub.click();
+		EnterHubName.sendKeys(HubName);
 		Thread.sleep(1000);
-		ConfigHub.click();
+	}
+	
+	
+	public String ChangeHub_2() throws InterruptedException {
+		SubmitSelectedHub.click();
+		Thread.sleep(1000);
+		ApprovePortfolios.click();
+		Thread.sleep(2000);
+		return Hub.getText();
 	}
 	
 	public String ApproveAllButton()  {

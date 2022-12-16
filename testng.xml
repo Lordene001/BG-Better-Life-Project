@@ -8,13 +8,13 @@
     </classes>
   </test> 
   
-  <test name="Login">
+  <test name="Supervisor">
     <classes>
       <class name="BetterLifeTest.SupervisorPageTest"/>
     </classes>
   </test> 
   
-  <test name="Login">
+  <test name="Admin">
     <classes>
       <class name="BetterLifeTest.AdminPageTest"/>
     </classes>
