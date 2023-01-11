@@ -50,9 +50,9 @@ public class AdminPageTest {
 	  
 	  AP.ChangeHub_1("Ikara");
 		
-		Robot RB = new Robot(); 
-		RB.keyPress(KeyEvent.VK_ENTER);
-		RB.keyRelease(KeyEvent.VK_ENTER);
+	  Robot RB = new Robot(); 
+	  RB.keyPress(KeyEvent.VK_ENTER);
+	  RB.keyRelease(KeyEvent.VK_ENTER);
 	  AP.ChangeHub_3();
 	  
 	  String ActualApprovalCheckText = AP.ApproveAllButton(); 
@@ -74,9 +74,9 @@ public class AdminPageTest {
 	  AdminPage AP = new AdminPage(driver);
 	  AP.ChangeHub_1("Ikara");
 		
-		Robot RB = new Robot(); 
-		RB.keyPress(KeyEvent.VK_ENTER);
-		RB.keyRelease(KeyEvent.VK_ENTER);
+	  Robot RB = new Robot(); 
+	  RB.keyPress(KeyEvent.VK_ENTER);
+	  RB.keyRelease(KeyEvent.VK_ENTER);
 	  AP.ChangeHub_3();
 	  
 	  String ActualApprovalCheckText = AP.RejectAllButton(); String
@@ -98,9 +98,9 @@ public class AdminPageTest {
 	  AdminPage AP = new AdminPage(driver);
 	  AP.ChangeHub_1("Ikara");
 		
-		Robot RB = new Robot(); 
-		RB.keyPress(KeyEvent.VK_ENTER);
-		RB.keyRelease(KeyEvent.VK_ENTER);
+	  Robot RB = new Robot(); 
+	  RB.keyPress(KeyEvent.VK_ENTER);
+	  RB.keyRelease(KeyEvent.VK_ENTER);
 	  AP.ChangeHub_3();
 	  
 	  String ActualApprovalCheckText1 = AP.ApproveAndReject_A_SingleRequest1();
@@ -159,9 +159,9 @@ public class AdminPageTest {
 	  AdminPage AP = new AdminPage(driver);
 	  AP.ChangeHub_1("Ikara");
 		
-		Robot RB = new Robot(); 
-		RB.keyPress(KeyEvent.VK_ENTER);
-		RB.keyRelease(KeyEvent.VK_ENTER);
+	  Robot RB = new Robot(); 
+	  RB.keyPress(KeyEvent.VK_ENTER);
+	  RB.keyRelease(KeyEvent.VK_ENTER);
 	  AP.ChangeHub_3();
 	  
 	  AP.Rest_To_Reject_Status();
