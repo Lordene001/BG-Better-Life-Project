@@ -87,6 +87,9 @@ public class AdminPage {
 	@FindBy(xpath="//td[@class='border-r border-gray-300 text-center'][2]")
 	WebElement NewFO;
 	
+	@FindBy(xpath="//img[@src='/assets/images/Icons_Home.svg']")
+	WebElement HomeButton;
+	
 	
 	
 	
@@ -110,6 +113,10 @@ public class AdminPage {
 		return Hub.getText();
 	}
 	
+	public void ChangeHub_3() throws InterruptedException {
+		SubmitSelectedHub.click();
+	}
+	
 	public String ApproveAllButton()  {
 		ApprovePortfolios.click();
 		Hub.click();
@@ -118,9 +125,10 @@ public class AdminPage {
 		return ApproveAllBtnCheck.getText();
 	}
 	
-	public String RejectAllButton() {
+	public String RejectAllButton() throws InterruptedException {
 		ApprovePortfolios.click();
 		Hub.click();
+		Thread.sleep(5000);
 		SelectAllFO.click();
 		RejectAllBtn.click();
 		RejectReason.sendKeys("Test Trial");
@@ -135,8 +143,9 @@ public class AdminPage {
 		SelectAnFO.click();
 		SelectedFO_ApprovalBtn.click();
 		RejectSubmitBtn.click();
-		Thread.sleep(3000);
-		return ApproveAllBtnCheck.getText();	
+		Thread.sleep(30000);
+		return ApproveAllBtnCheck.getText();
+		
 	}
 	
 	
@@ -145,12 +154,15 @@ public class AdminPage {
 		SelectedFO_RejectionBtn.click();
 		SelectedFO_RejectionReason.sendKeys("Test Run");
 		RejectSubmitBtn.click();
-		Thread.sleep(3000);
+		Thread.sleep(30000);
 		return RejectAllBtnCheck.getText();	
 	}
 	
 
 	public String EditVillageAllocation1(String EnterQuadrantName) throws InterruptedException {
+		Thread.sleep(5000);
+		HomeButton.click();
+		Thread.sleep(3000);
 		EditVillageAllocation.click();
 		Thread.sleep(2000);
 		SearchQuadrant.sendKeys(EnterQuadrantName);
@@ -178,6 +190,15 @@ public class AdminPage {
 		return NewFO.getText();
 	}
 	
+	public void Rest_To_Reject_Status() throws InterruptedException {
+		ApprovePortfolios.click();
+		Hub.click();
+		SelectAnFO.click();
+		SelectedFO_ApprovalBtn.click();
+		RejectSubmitBtn.click();
+		Thread.sleep(30000);
+		
+	}
 	
 	
 }

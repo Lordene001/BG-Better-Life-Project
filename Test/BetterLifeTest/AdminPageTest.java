@@ -40,13 +40,23 @@ public class AdminPageTest {
 	
 
 	
-	  @Test(priority=1) public void Verify_Approve_All_Button() { WebDriver driver
-	  = BaseClass.SetUp(); BaseClass.Admin_Username_password(driver);
+	  @Test(priority=1) 
+	  public void Verify_Approve_All_Button() throws AWTException, InterruptedException { 
+	  WebDriver driver = BaseClass.SetUp(); 
+	  BaseClass.Admin_Username_password(driver);
+	  Thread.sleep(8000);
 	  
 	  AdminPage AP = new AdminPage(driver);
 	  
-	  String ActualApprovalCheckText = AP.ApproveAllButton(); String
-	  ExpectedApprovalCheckText = "Approved";
+	  AP.ChangeHub_1("Ikara");
+		
+		Robot RB = new Robot(); 
+		RB.keyPress(KeyEvent.VK_ENTER);
+		RB.keyRelease(KeyEvent.VK_ENTER);
+	  AP.ChangeHub_3();
+	  
+	  String ActualApprovalCheckText = AP.ApproveAllButton(); 
+	  String ExpectedApprovalCheckText = "Approved";
 	  Assert.assertEquals(ActualApprovalCheckText, ExpectedApprovalCheckText);
 	  
 	  BaseClass.TearDown(driver);
@@ -54,11 +64,20 @@ public class AdminPageTest {
 	  }
 	  
 	  
-	  
-	  @Test(priority=2) public void Verify_Reject_All_Button() { WebDriver driver =
-	  BaseClass.SetUp(); BaseClass.Admin_Username_password(driver);
+	 
+	  @Test(priority=2) 
+	  public void Verify_Reject_All_Button() throws InterruptedException, AWTException { 
+	  WebDriver driver = BaseClass.SetUp(); 
+	  BaseClass.Admin_Username_password(driver);
+	  Thread.sleep(8000);
 	  
 	  AdminPage AP = new AdminPage(driver);
+	  AP.ChangeHub_1("Ikara");
+		
+		Robot RB = new Robot(); 
+		RB.keyPress(KeyEvent.VK_ENTER);
+		RB.keyRelease(KeyEvent.VK_ENTER);
+	  AP.ChangeHub_3();
 	  
 	  String ActualApprovalCheckText = AP.RejectAllButton(); String
 	  ExpectedApprovalCheckText = "Rejected";
@@ -70,15 +89,25 @@ public class AdminPageTest {
 	  
 	  
 	  
-	  @Test(priority=3) public void Verify_Approve_And_Reject_A_Single_FO() throws
-	  InterruptedException { WebDriver driver = BaseClass.SetUp();
+	  @Test(priority=3) 
+	  public void Verify_Approve_And_Reject_A_Single_FO() throws InterruptedException, AWTException { 
+	  WebDriver driver = BaseClass.SetUp();
 	  BaseClass.Admin_Username_password(driver);
+	  Thread.sleep(8000);
 	  
 	  AdminPage AP = new AdminPage(driver);
+	  AP.ChangeHub_1("Ikara");
+		
+		Robot RB = new Robot(); 
+		RB.keyPress(KeyEvent.VK_ENTER);
+		RB.keyRelease(KeyEvent.VK_ENTER);
+	  AP.ChangeHub_3();
 	  
 	  String ActualApprovalCheckText1 = AP.ApproveAndReject_A_SingleRequest1();
 	  String ExpectedApprovalCheckText1 = "Approved";
 	  Assert.assertEquals(ActualApprovalCheckText1, ExpectedApprovalCheckText1);
+	  
+	  Thread.sleep(2000);
 	  
 	  String ActualApprovalCheckText2 = AP.ApproveAndReject_A_SingleRequest2();
 	  String ExpectedApprovalCheckText2 = "Rejected";
@@ -89,16 +118,28 @@ public class AdminPageTest {
 	  }
 	  
 	  
+	  
 	  @Test(priority=4) public void Verify_Re_Assign_FO() throws
 	  InterruptedException, AWTException { WebDriver driver = BaseClass.SetUp();
 	  BaseClass.Admin_Username_password(driver);
-	  
+	  Thread.sleep(8000);
 	  AdminPage AP = new AdminPage(driver);
 	  
-	  String OldOfficerStaffID = AP.EditVillageAllocation1("008");
+	  //Change hub and approve a supervisor request for a field officer.
+	  AP.ChangeHub_1("Ikara");
+	  Robot RB = new Robot(); 
+	  RB.keyPress(KeyEvent.VK_ENTER);
+	  RB.keyRelease(KeyEvent.VK_ENTER);
+	  
+	  AP.ChangeHub_3();
+	  String ActualApprovalCheckText1 = AP.ApproveAndReject_A_SingleRequest1();
+	
+	  //Edit village allocation for quadrant 002 and change the field officer.
+	  String OldOfficerStaffID = AP.EditVillageAllocation1("002");
 	  AP.EditVillageAllocation2();
 	  
-	  Robot RB = new Robot(); RB.keyPress(KeyEvent.VK_ENTER);
+
+	  RB.keyPress(KeyEvent.VK_ENTER);
 	  RB.keyRelease(KeyEvent.VK_ENTER);
 	  
 	  String NewOfficerStaffID = AP.EditVillageAllocation3();
@@ -109,5 +150,24 @@ public class AdminPageTest {
 	  
 	  }
 	 
+	  @Test(priority=5) 
+	  public void Reset_Process_Test() throws InterruptedException, AWTException { 
+	  WebDriver driver = BaseClass.SetUp();
+	  BaseClass.Admin_Username_password(driver);
+	  Thread.sleep(8000);
+	  
+	  AdminPage AP = new AdminPage(driver);
+	  AP.ChangeHub_1("Ikara");
+		
+		Robot RB = new Robot(); 
+		RB.keyPress(KeyEvent.VK_ENTER);
+		RB.keyRelease(KeyEvent.VK_ENTER);
+	  AP.ChangeHub_3();
+	  
+	  AP.Rest_To_Reject_Status();
+	  
+	  BaseClass.TearDown(driver);
+	  
+	  }
 
 }
